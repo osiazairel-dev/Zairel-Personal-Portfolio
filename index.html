@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zairel Osia - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #764ba2;
+            transform: translateY(-2px);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #764ba2;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .profile-container {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid #667eea;
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05) rotate(5deg);
+        }
+
+        .about-text {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #555;
+            text-align: justify;
+        }
+
+        .about-text strong {
+            color: #667eea;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-item {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .skill-item:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+        }
+
+        .contact-info {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #764ba2;
+            border-bottom: 2px solid #764ba2;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                margin: 2rem 1rem;
+                padding: 2rem 1.5rem;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h1>Welcome to My Portfolio</h1>
+        <p style="text-align: center; font-size: 1.3rem; color: #555; margin-top: 1rem;">
+            Hi, I'm <strong style="color: #667eea;">Zairel Osia</strong> - Aspiring Web Developer
+        </p>
+    </section>
+
+    <section id="profile">
+        <h2>Profile</h2>
+        <div class="profile-container">
+            <div class="profile-photo">
+                <img src="c2b0ceca-ef15-4037-a522-179bf4a41ce0.jpg" alt="Zairel Osia">
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p class="about-text">
+            <strong>Hello, World!</strong><br><br>
+            I am <strong>Zairel Osia</strong>, 19 years old, from Basicao Interior Pioduran, Albay. As a student of computer science, I want to learn more knowledge about this program and web development. To share my works to everyone is a big achievement that truly matters to inspire others. I love to do household chores, I can sing and I can dance.
+            <br><br>
+            Learning new skills is hard but to try and try until I make it is accomplishment.
+        </p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item">Java</div>
+            <div class="skill-item">Python</div>
+            <div class="skill-item">PHP</div>
+            <div class="skill-item">JavaScript</div>
+            <div class="skill-item">HTML</div>
+            <div class="skill-item">CSS</div>
+            <div class="skill-item">Git</div>
+            <div class="skill-item">Github</div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-info">
+            <p>Feel free to reach out to me!</p>
+            <p style="margin-top: 1rem;">
+                📧 Email: <a href="mailto:osiazairel@gmail.com">osiazairel@gmail.com</a>
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Zairel Osia. All rights reserved.</p>
+    </footer>
+</body>
+</html>
